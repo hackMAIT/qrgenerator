@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $('#send').on('click',function(){
+          var data = {
+            'account': $('#ajax_account').val(),
+            'pass': $('#ajax_pass').val()
+          };
+          $.post('/sign3', data ,function(data2) {
+            $('#ajax').html(data2);
+            console.log(data2);
+          });
+        });
+      });
+
+    </script>
+  </head>
+  <body>
+
+    <form action="/sign2" method="POST">
+      <table>
+        <tr>
+          <td>Blood sugar level(mg/dL): <input type="number" name="bloodsugarlevel" id="bloodsugarlevel"></td>
+        </tr>
+        <tr>
+          <td>Blood count(trillion cells/L): <input type="number" name="bloodcount" id="bloodcount"></td>
+        </tr>
+        <tr>
+          <td>Blood pressure(Upper limit): <input type="number" name="bloodpressureul" id="bloodpressureul"></td>
+        </tr>
+        <tr>
+          <td>Blood pressure(Lower limit): <input type="number" name="bloodpressurell" id="bloodpressurell"></td>
+        </tr>
+        <tr>
+          <td>Iron level(percentage): <input type="number" name="ironlevel" id="ironlevel"></td>
+        </tr>
+        <tr>
+          <td>Cholestrol(mg/dL): <input type="cholestrol" name="cholestrol" id="cholestrol"></td>
+        </tr>
+        <tr>
+          <td>Pulse(beats/min): <input type="pulse" name="pulse" id="pulse"></td>
+        </tr>
+        <tr>
+          <td>Body mass index: <input type="bodymassindex" name="bodymassindex" id="bodymassindex"></td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="send"></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+<!--   Blood sugar level
+  blood count
+  blood pressure
+  Iron Level
+  Cholestrol
+  Pulse
+  Body Mass Index -->
+</html>
