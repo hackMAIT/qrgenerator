@@ -3,6 +3,7 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
       jQuery(document).ready(function($) {
@@ -19,39 +20,52 @@
       });
 
     </script>
-  </head>
-  <body>
+    <style>
+    .mbottom {
+    margin-bottom: 10px;
+    }
 
-    <form action="/sign2" method="POST">
+    </style>
+  </head>
+  <body class="jumbotron">
+<center><h1 style="color:#2C3E50"><b>Patient details</b></h1></center>
+<hr/>
+    <form action="/sign2" method="POST" class="jumbotron" style="margin-top:-20px">
+      <center>
       <table>
         <tr>
-          <td>Blood sugar level(mg/dL): <input type="number" name="bloodsugarlevel" id="bloodsugarlevel"></td>
+          <td><b>Blood sugar level(mg/dL):</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="mbottom" type="number" name="bloodsugarlevel" id="bloodsugarlevel"></td>
+
         </tr>
         <tr>
-          <td>Blood count(trillion cells/L): <input type="number" name="bloodcount" id="bloodcount"></td>
+          <td><b>Blood count(trillion cells/L):</b>&nbsp;&nbsp;<input class="mbottom" type="number" name="bloodcount" id="bloodcount"></td>
         </tr>
         <tr>
-          <td>Blood pressure(Upper limit): <input type="number" name="bloodpressureul" id="bloodpressureul"></td>
+          <td><b>Blood pressure(Upper limit):</b> <input class="mbottom" type="number" name="bloodpressureul" id="bloodpressureul"></td>
         </tr>
         <tr>
-          <td>Blood pressure(Lower limit): <input type="number" name="bloodpressurell" id="bloodpressurell"></td>
+          <td><b>Blood pressure(Lower limit):</b> <input class="mbottom" type="number" name="bloodpressurell" id="bloodpressurell"></td>
         </tr>
         <tr>
-          <td>Iron level(percentage): <input type="number" name="ironlevel" id="ironlevel"></td>
+          <td><b>Iron level(in percentage):</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="mbottom" type="number" name="ironlevel" id="ironlevel"></td>
         </tr>
         <tr>
-          <td>Cholestrol(mg/dL): <input type="cholestrol" name="cholestrol" id="cholestrol"></td>
+          <td><b>Cholestrol level(mg/dL):</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="mbottom" type="cholestrol" name="cholestrol" id="cholestrol"></td>
         </tr>
         <tr>
-          <td>Pulse(beats/min): <input type="pulse" name="pulse" id="pulse"></td>
+          <td><b>Pulse rate(beats/min):</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input class="mbottom" type="pulse" name="pulse" id="pulse"></td>
         </tr>
         <tr>
-          <td>Body mass index: <input type="bodymassindex" name="bodymassindex" id="bodymassindex"></td>
+          <td><b>Body mass index(BMI):</b> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input class="mbottom" type="bodymassindex" name="bodymassindex" id="bodymassindex"></td>
+        
         </tr>
+
         <tr>
-          <td><input type="submit" value="send"></td>
+
+          <td><br/><input type="submit" value="Submit" class="btn btn-md btn-primary center-block"></td>
         </tr>
       </table>
+      </center>
     </form>
   </body>
 <!--   Blood sugar level
