@@ -1,3 +1,7 @@
+
+/*
+ * GET home page.
+ */
 var qr = require('qr-image');
 exports.index = function(req, res){
   res.render('index', { title: 'Express' });
@@ -27,10 +31,10 @@ exports.sign2 = function(req, res){
 	var deviation = (ad+bd+cd+dd+ed+fd+gd)/12;
 	var health=100-deviation;
 
-var qr_svg = qr.image('Blood Sugar Level: ' + req.body.bloodsugarlevel + '\nBlood Count(trillion cells/Litre): ' + req.body.bloodcount + '\nBlood Pressure: ' + req.body.bloodpressureul +'/'+ req.body.bloodpressurell +'\nIron Level(percentage): ' + req.body.ironlevel + '\nCholestrol(mg/dL): ' + req.body.cholestrol + '\nPulse(beats/min): ' + req.body.pulse + ' \nBMI: ' + req.body.bodymassindex + '\n\nHealth percentage :' + health, { type: 'svg' });
-qr_svg.pipe(require('fs').createWriteStream('public/i_love_qr.svg'));
+var qr_svg = qr.image('Blood Sugar Level: ' + req.body.bloodsugarlevel + '\nBlood Count(trillion cells/Litre): ' + req.body.bloodcount + '\nBlood Pressure: ' + req.body.bloodpressureul +'/'+ req.body.bloodpressurell +'\nIron Level(percentage): ' + req.body.ironlevel + '\nCholestrol(mg/dL): ' + req.body.cholestrol + '\nPulse(beats/min): ' + req.body.pulse + ' \nBMI: ' + req.body.bodymassindex + '\n\nHealth Percentage' + health + '%', { type: 'svg' });
+qr_svg.pipe(require('fs').createWriteStream('public/qr.svg'));
 
 var svg_string = qr.imageSync('I love QR!', { type: 'svg' });
-  res.render('sign2', {});
+  res.render('sign2', {aditya: health, ad: ad, bd: bd, cd: cd, dd: dd, ed: ed, fd: fd, gd: gd});
 };
 
